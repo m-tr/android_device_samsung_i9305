@@ -34,3 +34,11 @@
 /dev/block/mmcblk0p6				u:object_r:mmc_block_device:s0
 /dev/block/mmcblk0p12				u:object_r:mmc_block_device:s0
 /dev/block/mmcblk0p16                           u:object_r:mmc_block_device:s0
+
+/system/bin/qmiproxy                    u:object_r:qmiproxy_exec:s0
+/system/bin/at_distributor              u:object_r:at_distributor_exec:s0
+/system/bin/smdexe                      u:object_r:SMD-daemon_exec:s0
+
+/dev/socket/qmux_audio(/.*)?            u:object_r:qmuxd_socket:s0
+/dev/socket/qmux_gps(/.*)?              u:object_r:qmuxd_socket:s0
+/dev/socket/qmux_radio(/.*)?            u:object_r:qmuxd_socket:s0
