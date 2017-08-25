@@ -52,3 +52,5 @@ TARGET_OTA_ASSERT_DEVICE := m3,m3xx,i9305,GT-I9305
 # Selinux
 BOARD_SEPOLICY_DIRS += \
     device/samsung/i9305/selinux
+
+-include device/samsung/i9305/twrp.mk
