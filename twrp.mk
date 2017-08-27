@@ -1,7 +1,7 @@
 LZMA_RAMDISK_TARGETS := boot,recovery
 # Recovery
 RECOVERY_VARIANT := twrp
-TARGET_RECOVERY_FSTAB := device/samsung/i9305/rootdir/twrp.fstab
+PRODUCT_COPY_FILES += device/samsung/i9305/rootdir/twrp.fstab:recovery/root/etc/twrp.fstab
 
 # TWRP
 TWRP_NEW_THEME := true
