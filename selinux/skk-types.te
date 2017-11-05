@@ -7,3 +7,4 @@ type qmuxd_socket, file_type;
 type qmiproxy_exec, exec_type, file_type;
 type at_distributor_exec, exec_type, file_type;
 type SMD-daemon_exec, exec_type, file_type;
+type sysfs_display, fs_type, sysfs_type;

@@ -19,6 +19,7 @@ allow qcks block_device:dir { write };
 allow qcks init:unix_stream_socket { connectto };
 allow qcks property_socket:sock_file { write };
 allow qcks radio_prop:property_service { set };
+allow qcks unlabeled:file { open read write getattr setattr };
 
 allow qmiproxy init:unix_stream_socket { connectto };
 allow qmiproxy kernel:system { module_request };
@@ -33,12 +34,19 @@ allow qmuxd qmuxd_socket:sock_file { create getattr setattr unlink };
 allow rild at_distributor:dir { search };
 allow rild at_distributor:file { getattr open read };
 allow rild qmuxd_socket:dir { add_name remove_name search write };
-allow rild qmuxd_socket:sock_file { create setattr write };
+allow rild qmuxd_socket:sock_file { create setattr write unlink};
 allow rild rild:capability { dac_override };
 
+allow system_app sysfs_display:{ file lnk_file } { getattr open read write };
+allow system_app sysfs_display:dir { search };
 allow system_server qmuxd_socket:dir { add_name search write };
 allow system_server qmuxd_socket:sock_file { create setattr write };
+allow system_server sysfs_display:lnk_file rw_file_perms;
+allow system_server sysfs_display:dir rw_dir_perms;
+allow system_server sysfs_display:file rw_file_perms;
 allow audioserver qmuxd:unix_stream_socket connectto;
 allow audioserver qmuxd_socket:sock_file { write create setattr };
 allow audioserver qmuxd:unix_stream_socket { connectto };
 allow audioserver qmuxd_socket:dir { write search add_name };
+
+allow ueventd sysfs_display:file { write open };
