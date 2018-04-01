@@ -58,7 +58,8 @@ PRODUCT_PACKAGES += \
     libsecril-client-sap
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    mobiledata.interfaces=pdp0,gprs,ppp0,rmnet0,rmnet1
+    mobiledata.interfaces=pdp0,gprs,ppp0,rmnet0,rmnet1 \
+    ro.telephony.ril_class=i9305RIL
 
 PRODUCT_COPY_FILES += \
     frameworks/base/nfc-extras/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
